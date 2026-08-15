@@ -1,0 +1,20 @@
+# Normalize line endings so the repo is consistent regardless of who clones it.
+* text=auto
+
+# Windows-only tooling that must keep CRLF.
+*.ps1   text eol=crlf
+*.iss   text eol=crlf
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+*.cs        text diff=csharp
+*.csproj    text
+*.manifest  text
+*.py        text eol=lf
+*.md        text
+
+# The bundled ZIP dataset is compressed; never let Git touch its bytes.
+*.csv.gz binary
+*.gz     binary
+*.exe    binary
+*.ico    binary

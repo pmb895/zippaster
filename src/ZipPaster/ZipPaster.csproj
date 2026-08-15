@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>ZipPaster</RootNamespace>
+    <AssemblyName>ZipPaster</AssemblyName>
+    <Version>1.0.0</Version>
+    <Product>ZipPaster</Product>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <!-- Publish settings live on the command line (see installer/build.ps1) so a
+         plain `dotnet build` stays fast and framework-dependent. -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- Required by the LibraryImport source generator used for the Win32 calls. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\us_zipcodes.csv.gz" />
+  </ItemGroup>
+
+  <!-- No NuGet dependencies by design.
+       An earlier revision used Microsoft.Data.Sqlite, but its transitive native
+       library (SQLitePCLRaw.lib.e_sqlite3 2.1.11) carries CVE-2025-6965 with no
+       patched release available. The mutable state here is small enough (a few
+       projects, their used-ZIP sets, and settings) that a JSON file serves it
+       exactly as well. The 41k-row ZIP catalog is read-only and already queried
+       in memory, so nothing was gained from SQL in the first place. -->
+
+</Project>

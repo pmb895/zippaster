@@ -1,0 +1,41 @@
+# ---- Build output -----------------------------------------------------------
+# Never commit these. The published single-file exe is ~102 MB, which is over
+# GitHub's 100 MB hard limit and would make the push fail outright.
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Installer output (~33 MB Setup.exe). Attach these to a GitHub Release instead
+# of committing them, so clones stay small.
+installer/output/
+
+# ---- Visual Studio / Rider / VS Code ---------------------------------------
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.DotSettings.user
+
+# ---- Python (tools/build_zipdata.py) ---------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---- OS ---------------------------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- Local scratch ----------------------------------------------------------
+*.log
+error.log
+
+# NOTE: src/ZipPaster/Resources/us_zipcodes.csv.gz IS committed on purpose.
+# It is only 582 KB, and committing it means the project builds offline without
+# first running the Python data script.

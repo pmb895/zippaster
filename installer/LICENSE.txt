@@ -1,0 +1,39 @@
+ZipPaster
+=========
+
+A desktop helper for pasting US ZIP codes, cities and states into web forms,
+with per-project tracking of which ZIP codes have already been used.
+
+
+ZIP CODE DATA ATTRIBUTION
+-------------------------
+
+The bundled database of 41,195 US ZIP codes is derived from the GeoNames
+postal code data set:
+
+    https://www.geonames.org/
+
+GeoNames postal code data is made available under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0):
+
+    https://creativecommons.org/licenses/by/4.0/
+
+This means the data may be redistributed, including inside this installer,
+provided GeoNames is credited. That credit is given here, in the application's
+Help > About dialog, and in the project's README.
+
+The data has been reformatted for use in this application: records were limited
+to the 50 states, the District of Columbia, and the five inhabited US
+territories; overseas military (APO/FPO/DPO) entries were removed; and a small
+number of place names had their capitalisation corrected. No claim is made that
+the data is complete, current, or fit for any particular purpose.
+
+
+ABOUT THIS BUILD
+----------------
+
+This application is not digitally signed with a code signing certificate.
+Windows SmartScreen and some antivirus products may therefore warn about it on
+first run. ZipPaster works by simulating keyboard input, which is a technique
+also used by keyloggers, so heuristic scanners sometimes flag it. The complete
+source code is available so this behaviour can be verified.
